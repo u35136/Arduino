@@ -345,7 +345,7 @@ function render() {
 	// Uncomment the next line to see the frequencyData[] in the console
 	//console.log(frequencyData)
 
-	var N2 = 2*N+1;
+	/*var N2 = 2*N+1;
 	var step = 1.2/N2;
 	var size = step * 0.6;
 	
@@ -381,7 +381,7 @@ function render() {
 		}
 		
 		currentFlowI = (currentFlowI + 1) % (N2+1);
-	}
+	}*/
 
     requestAnimFrame( render );
 }
