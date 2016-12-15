@@ -63,6 +63,17 @@ function rotateZ() {
 	paused = 0;
 	axis = zAxis;
 };
+function TurnRight() {
+	paused = 0;
+	axis = xAxis;
+	//要讓她換右邊那面
+};
+function TurnLeft() {
+	paused = 0;
+	axis = xAxis;
+	//要讓她換左邊那面
+};
+
 
 
 // ModelView and Projection matrices
@@ -311,6 +322,8 @@ window.onload = function init()
     document.getElementById( "zButton" ).onclick = rotateZ;
     document.getElementById( "pButton" ).onclick = function() {paused=!paused;};
     document.getElementById( "dButton" ).onclick = function() {depthTest=!depthTest;};
+    document.getElementById( "rButton" ).onclick = TurnRight;
+    document.getElementById( "lButton" ).onclick = TurnLeft;
 	
 	// event handlers for mouse input (borrowed from "Learning WebGL" lesson 11)
 	canvas.onmousedown = handleMouseDown;
@@ -345,7 +358,7 @@ function render() {
 	// Uncomment the next line to see the frequencyData[] in the console
 	//console.log(frequencyData)
 
-	/*var N2 = 2*N+1;
+	var N2 = 2*N+1;
 	var step = 1.2/N2;
 	var size = step * 0.6;
 	
@@ -381,7 +394,7 @@ function render() {
 		}
 		
 		currentFlowI = (currentFlowI + 1) % (N2+1);
-	}*/
+	}
 
     requestAnimFrame( render );
 }
